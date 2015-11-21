@@ -123,9 +123,13 @@ h6 {
 
 .banner h2 {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    background:rgba(55,112,115,0.5);
     font-size: 3em;
-	color: #F2A922;
+	color: #F1E9D4;
+}
+
+h3 {
+	background:rgba(55,112,115,0.5);
 }
 
 .banner ul {
