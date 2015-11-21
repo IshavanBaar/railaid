@@ -11,22 +11,9 @@
 
     <title>Rail Aid - Donate train tickets</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/landing-page.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    {% assets "css_all" %}
+      <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"></script>
+    {% endassets %}
 
 </head>
 
@@ -76,7 +63,7 @@
                             <li>
                                 <a href="search-tickets.html" class="btn btn-default btn-lg"><i class="fa fa-search fa-fw"></i> <span class="network-name">Book your journey and donate!</span></a>
                             </li>
-                           <!-- 
+                           <!--
                             <li>
                                 <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                             </li>
@@ -96,6 +83,42 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div>
+                <label for="amount-homeless">How much do you want to give ?
+                    <input type="text" id="total-amount" value="20"/>
+                </label>
+            </div>
+            <form method="POST" action="{{ url_for("paypal_process") }}">
+                <div>
+                    <label for="amount-homeless">Homeless
+                        <input type="text" name="amount-homeless" class="donation-value" value="5"/>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="amount-refugees">Refugees
+                        <input type="text" name="amount-refugees" class="donation-value" value="5"/>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="amount-orphans">Orphans
+                        <input type="text" name="amount-orphans" class="donation-value" value="5"/>
+                    </label>
+                </div>
+
+                <div>
+                    <label for="amount-poverished">Poverished
+                        <input type="text" name="amount-poverished" class="donation-value" value="5"/>
+                    </label>
+                </div>
+
+                <input type="submit" value="Donate"/>
+            </form>
+        </div>
+    </div>
 
 	<a  name="whatwedo"></a>
     <div class="content-section-a">
@@ -109,7 +132,7 @@
                     <p class="lead">We are a non-profit organisation bringing the freedom and opportunities of rail to disadvantaged individuals in the UK.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
+                    <img class="img-responsive" src="/static/img/ipad.png" alt="">
                 </div>
             </div>
 
@@ -118,11 +141,9 @@
 
     </div>
     <!-- /.content-section-a -->
-    
+
     <div class="content-section-b">
-
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
@@ -131,7 +152,7 @@
                     <p class="lead">Order your usual train tickets and add a donation. The donation will give a lifeline to the most misfortunate people selected by the volunteers of charity organisation. </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
+                    <img class="img-responsive" src="/static/img/dog.png" alt="">
                 </div>
             </div>
 
@@ -150,10 +171,10 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">... Specify who will benefit from your donation</h2>
-                    <p class="lead">Add text here</p> 
+                    <p class="lead">Add text here</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <img class="img-responsive" src="/static/img/phones.png" alt="">
                 </div>
             </div>
 
@@ -180,9 +201,6 @@
                         <li>
                             <a href="https://facebook.com" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                         </li>
-                        <li>
-                            <a href="https://github.com/IshavanBaar/railaid" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -203,7 +221,6 @@
                             <a href="#">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
-                        <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="#whatwedo">What We Do</a>
                         </li>
@@ -217,13 +234,9 @@
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+    {% assets "js_all" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
 </body>
 
 </html>

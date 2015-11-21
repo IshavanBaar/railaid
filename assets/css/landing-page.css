@@ -22,7 +22,7 @@ h6 {
 }
 
 .topnav {
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .lead {
@@ -36,7 +36,7 @@ h6 {
     text-align: center;
     color: #F1E9D4;
 	background-color:rgba(255,0,0,0.5);
-    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background: url(img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -117,7 +117,7 @@ h6 {
 
 .banner {
     padding: 100px 0;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background: url(img/banner-bg.jpg) no-repeat center center;
     background-size: cover;
 }
 
