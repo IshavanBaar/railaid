@@ -1,11 +1,12 @@
+#!/usr/bin/python
 from silver import *
 from silver.silverraw import silvershop, silvercom, silverbook, silvercore
 import pyxb
 import json
 from datetime import datetime
 
-cert = "hacktrain.nokey.pem"
-key =  "hacktrain.key"
+cert = "keys/hacktrain.nokey.pem"
+key =  "keys/hacktrain.key"
 sc = SilverCore("HackTrain", "GB", "CH2", cert, key)
 
 # =======================================================
@@ -15,7 +16,7 @@ sc = SilverCore("HackTrain", "GB", "CH2", cert, key)
 p1 = Passenger(age=30)
 
 tp1 = TravelPoint(
-    origin="GBQQU", 
+    origin="GBQQU",
     destination="GBQQM",
     departure=datetime(2015, 11, 25, 12))
 
@@ -79,7 +80,7 @@ for l in fr.legs.leg:
         print p.totalPrice.currency
         print p.totalPrice.value()
         print p.holdExpiration
-        
+
         for l in p.legReferences.legSolutionIDRef:
             print l
 
@@ -126,7 +127,7 @@ for l in fr.legs.leg:
                     for f in c.fareApplicabilities.fareApplicability:
                         print f.outbound
                         print f.type
-            
+
             for r in t.prices.price:
                 print r.type
                 print r.currency
@@ -210,7 +211,7 @@ p1.add_contact(ContactInfo(CONTACT_TYPE.BUSINESS, CONTACT_MEDIUM.PHONE, "1234567
 p1.add_contact(ContactInfo(CONTACT_TYPE.BUSINESS, CONTACT_MEDIUM.EMAIL, "jsmith@email.com"))
 
 ts1 = TravelSegment(
-        id = "LS_1_1_TS_0", 
+        id = "LS_1_1_TS_0",
         sequence = 0,
         origin = "GBRDG",
         destination = "GBQQM",
@@ -236,7 +237,7 @@ fc1 = FareCode(
 # Creating passenger reference with one fare code (As there is 1 travel segment)
 pr1 = PassengerReference(p1, PASSENGER_TYPE.A, [fc1])
 
-# The FarePrice breakdown for the total ticketable fare cost 
+# The FarePrice breakdown for the total ticketable fare cost
 price1 = FarePrice(319.52, "TICKET", "USD")
 
 tf1 = TicketableFare(
@@ -246,9 +247,9 @@ tf1 = TicketableFare(
         passenger_references=[pr1])
 
 f1 = FareTotal(
-        id = "PRICE_P_1_23", 
-        currency = "GBP", 
-        price = 319.52, 
+        id = "PRICE_P_1_23",
+        currency = "GBP",
+        price = 319.52,
         expiration = "2015-10-27T15:50:33Z",
         ticketable_fares = [tf1],
         legs = [leg1])
@@ -341,14 +342,3 @@ b = BookingConfirmation(
 booking_confirm = sc.confirm_booking(b)
 
 print booking_confirm.requestStatus.success # True
-
-
-
-
-
-
-
-
-
-
-    

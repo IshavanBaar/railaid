@@ -1,6 +1,10 @@
 #!/usr/bin/python
 from flask import Flask, session, render_template, url_for, redirect, request, flash, g
 from flask.ext import assets
+from silver import *
+from silver.silverraw import silvershop, silvercom, silverbook, silvercore
+import pyxb
+import json
 import json
 import os
 import paypalrestsdk
@@ -20,6 +24,8 @@ env.register (
     assets.Bundle(
         'js/jquery.js',
         'js/bootstrap.min.js',
+        'js/moment-with-locales.min.js',
+        'js/bootstrap-datetimepicker.min.js',
         'js/slider.js',
         'js/amounts.js',
         'js/landing.js',
@@ -31,17 +37,24 @@ env.register(
     'css_all',
     assets.Bundle(
         'css/bootstrap.min.css',
+        'css/bootstrap-datetimepicker.min.css',
         'css/slider.css',
         'css/landing-page.css',
         output='css_all.css'
     )
 )
 
+# Paypal lib
 paypalrestsdk.configure(
   mode="sandbox", # sandbox or live
   client_id=paypal_client_id,
   client_secret= paypal_client_secret
 )
+
+# silvercore api
+cert = "keys/hacktrain.nokey.pem"
+key =  "keys/hacktrain.key"
+sc = SilverCore("HackTrain", "GB", "CH2", cert, key)
 
 @app.route('/')
 def index():
@@ -133,6 +146,25 @@ def paypal_success():
   print(payment.transactions[0].amount.total);
 
   return "Thank you for your donation of " + payment.transactions[0].amount.total + "!"
+
+@app.route('/search/tickets')
+def search_tickets():
+  p1 = Passenger(age=30)
+
+  tp1 = TravelPoint(
+      origin="GBQQU",
+      destination="GBQQM",
+      departure=datetime(2015, 11, 23, 8))
+
+  fq = FareSearch(
+          travel_points = [tp1],
+          fare_filter = FARE_FILTER.CHEAPEST,
+          passengers = [p1])
+
+  fares_result = sc.search_fare(fq)
+  fr = fares_result.results
+  print(fr)
+  return render_template('search-result.html', data=fr)
 
 if __name__ == '__main__':
   app.run(debug=True)

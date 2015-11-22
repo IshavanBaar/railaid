@@ -39,6 +39,8 @@ $('.donation-value').each(function() {
       donation_values[index] = $(this).val();
     });
   });
+
+  setTotal();
 });
 
 function registerDonationValues() {
@@ -62,6 +64,15 @@ function getSum() {
   return sum;
 }
 
+function setTotal() {
+  sum = getSum();
+  if ($(".ticket.selected .price-value").length > 0) {
+    sum += parseFloat($(".ticket.selected .price-value").html());
+  }
+
+  $("#total-price").html(""+sum);
+}
+
 registerDonationValues();
 $("#total-amount").bind("keyup change", function() {
   var amount = $(this).val() ? parseFloat($(this).val()) : 0;
@@ -82,4 +93,5 @@ $("#total-amount").bind("keyup change", function() {
   }
 
   registerDonationValues();
+  setTotal();
 });

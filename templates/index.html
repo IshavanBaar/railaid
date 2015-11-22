@@ -70,7 +70,15 @@
                             <label for="destination">To</label>
                             <input type="text" class="form-control" id="destination" placeholder="York">
                           </div>
-                          <a class="btn btn-default" href="#donate-block" id="book-button"><i class="fa fa-search fa-fw"></i><span class="network-name">Find + Donate</span></a>
+                          <div class="form-group" data-date-format="YYYY-MM-DD">
+                            <label for="date">Date</label>
+                            <input type="text" class="form-control" id="datepicker">
+                          </div>
+                              <hr>
+                              <a class="btn btn-default" href="#search" id="search-button"><i class="fa fa-search fa-fw"></i><span class="network-name">Find + Donate</span></a>
+                              - or -
+
+                              <a class="btn btn-default" href="#donate" id="donate-button"><i class="fa fa-gbp fa-fw"></i><span class="network-name">Donate</span></a>
                         </form>
                     </div>
                 </div>
@@ -78,51 +86,78 @@
 
         </div>
         <!-- /.container -->
-		<div class="container">
-			<div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <hr class="intro-divider">
-			
-							<div class="journey1">
-								<h3> 22/11/2015  13:30 </h3>
-								<div class="journey1Detail" style="display:none">
-								<!-- 22/11/2015  Now() StartTime EndTime ARROW TO SELECT) -->
-								<div/>"
-							</div>
-							
-						
-							<div class="journey2">
-								<h3> 22/11/2015  13:30 </h3>
-								<div class="journey2Detail" style="display:none">
-								<!-- 22/11/2015  Now() StartTime EndTime ARROW TO SELECT) -->
-								<div/>"
-							
-							</div>
-							<div class="journey3">
-							<h3> 22/11/2015  13:30 </h3>
-								<div class="journey3Detail" style="display:none">
-								<!-- 22/11/2015  Now() StartTime EndTime ARROW TO SELECT) -->
-								<div/>"
-							</div>
-							
-						</div>
-					</div>                                                                                                           
-                </div>
-            </div>
-		</div>
-    </div>
+	</div>
     <!-- /.intro-header -->
 
     <!-- Page Content -->
 
     <!-- Donation -->
-    <div class="content-section-b" id="donate-block" hidden >
+
+    <div class="content-section-b" id="search" hidden>
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 col-xs-push-1 lead">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
+                        <h2 class="section-heading">Choose a ticket</h2>
+                        <div class="col-xs-12">
+                            <div class="ticket">
+                                <div class="ticket-header">
+                                    London -> York
+                                    <div class="pull-right">
+                                        11/23/2015 - 8h23
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <p>
+                                                1 passenger<br/>
+                                                Estimate arrival time: 11h20
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-3 price">
+                                            <div class="text-right red">£<span class="price-value">96.80</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ticket">
+                                <div class="ticket-header">
+                                    London -> York
+                                    <div class="pull-right">
+                                        11/23/2015 - 9h44
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <p>
+                                                1 passenger<br/>
+                                                Estimate arrival time: 11h53
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-3 price">
+                                            <div class="text-right">£<span class="price-value">112.80</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section-b" id="donate" hidden >
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-push-1 lead">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Make your donation</h2>
 
                     <div class="row">
                         <form method="POST" action="{{ url_for("paypal_process") }}" role="form">
@@ -171,7 +206,12 @@
                                 </div>
                             </div>
 
-                            <input type="submit" value="Donate" class="pull-right btn btn-info network-name"/>
+                            <div class="pull-right">
+                                Total : £<span id="total-price"></span>
+                            </div>
+                            <br/>
+                            <br/>
+                            <input type="submit" value="Donate" id="donate-submit-button" class="pull-right btn btn-info network-name"/>
                         </form>
                     </div>
                 </div>
