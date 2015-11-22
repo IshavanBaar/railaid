@@ -22,6 +22,7 @@ env.register (
         'js/bootstrap.min.js',
         'js/slider.js',
         'js/amounts.js',
+        'js/landing.js',
         output='js_all.js'
     )
 )

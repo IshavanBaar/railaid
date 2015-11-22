@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#whatwedo">What We Do</a>
+                        <a href="#whatwedo">Our Values</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
@@ -60,11 +60,17 @@
                         <h1>Donate train tickets</h1>
                         <h3>Share your mobility with those who need it. This is Rail Aid.</h3>
                         <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="search-tickets.html" class="btn btn-default btn-lg"><i class="fa fa-search fa-fw"></i> <span class="network-name">Book your journey and donate!</span></a>
-                            </li>
-                        </ul>
+                        <form class="form-inline">
+                          <div class="form-group">
+                            <label for="from">From</label>
+                            <input type="text" class="form-control" id="from" placeholder="London">
+                          </div>
+                          <div class="form-group">
+                            <label for="destination">To</label>
+                            <input type="text" class="form-control" id="destination" placeholder="York">
+                          </div>
+                          <a class="btn btn-default" href="#donate-block" id="book-button"><i class="fa fa-search fa-fw"></i><span class="network-name">Find + Donate</span></a>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -76,7 +82,9 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
-    <div class="content-section-b">
+
+    <!-- Donation -->
+    <div class="content-section-b" id="donate-block" hidden >
         <div class="container">
             <div class="row">
                 <div class="col-xs-10 col-xs-push-1 lead">
@@ -144,10 +152,15 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Mobility = Freedom</h2>
-                    <p class="lead">We are a non-profit organisation bringing the freedom and opportunities of rail to disadvantaged individuals in the UK.</p>
+                    <p class="lead">We are a non-profit organisation enabling disadvantaged individuals in the UK to enjoy the freedom of taking the train. Through our network of charity organisations we ensure that donations by travellers and the railway industry will end up in the hands of people that cannot afford to travel by train. These include:
+                    <ul>
+                        <li>Unemployed and/or homeless people</li>
+                        <li>Orphans and impoverished children</li>
+                        <li>Refugees</li>
+                    </ul></p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="/static/img/ipad.png" alt="">
+                    <img class="img-responsive" src="/static/img/a.jpg" alt="">
                 </div>
             </div>
 
@@ -155,7 +168,6 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
 
     <div class="content-section-b">
         <div class="container">
@@ -164,10 +176,10 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Your Tickets = Their Tickets</h2>
-                    <p class="lead">Order your usual train tickets and add a donation. The donation will give a lifeline to the most misfortunate people selected by the volunteers of charity organisation. </p>
+                    <p class="lead">Order your train tickets as usual but add a donation. This will result in tickets for the most misfortunate people who cannot afford it. Charity organisations make sure that each of them is carefully selected.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="/static/img/dog.png" alt="">
+                    <img class="img-responsive" src="/static/img/b.jpg" alt="">
                 </div>
             </div>
 
@@ -177,7 +189,28 @@
     </div>
     <!-- /.content-section-b -->
 
-    <div class="content-section-a">
+    <div class="content-section-c">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Good CSR = Everybody Wins</h2>
+                    <p class="lead">Train Operating Companies could also contribute as part of their Corporate Social Responsibility strategies. They provide seats for these groups of people, ensuring that trains are at optimal capacity.
+                    </p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="/static/img/c.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container c -->
+
+    </div>
+
+    <div class="content-section-d">
 
         <div class="container">
 
@@ -185,11 +218,11 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">... Specify who will benefit from your donation</h2>
-                    <p class="lead">Add text here</p>
+                    <h2 class="section-heading">Donation = Transparant Feedback</h2>
+                    <p class="lead">At every donation, you could specify where the money will end up. Here about specifying which individuals, how much. Also: the user stories, making sure that they end up well</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="/static/img/phones.png" alt="">
+                    <img class="img-responsive" src="/static/img/d.jpg" alt="">
                 </div>
             </div>
 
@@ -197,7 +230,7 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
+    <!-- /.content-section-d -->
 
 	<a  name="contact"></a>
     <div class="banner">
@@ -237,7 +270,7 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#whatwedo">What We Do</a>
+                            <a href="#whatwedo">Our Values</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>

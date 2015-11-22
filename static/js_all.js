@@ -124,3 +124,7 @@ $("#total-amount").bind("keyup change", function() {
 
   registerDonationValues();
 });
+
+$("#book-button").on("click", function() {
+    $("#donate-block").slideDown("slow");
+});
