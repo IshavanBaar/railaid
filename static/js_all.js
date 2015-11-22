@@ -228,6 +228,8 @@ $("#total-amount").bind("keyup change", function() {
 });
 
 $(".ticket").on("click", function() {
+    $(".ticket").removeClass("selected");
+
     $(this).addClass("selected");
     $("#donate").slideDown("slow");
     $("#donate-submit-button").attr("value", "BUY YOUR TICKET AND DONATE");
