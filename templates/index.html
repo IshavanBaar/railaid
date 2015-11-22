@@ -22,41 +22,21 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">Book Your Journey And Donate</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#whatwedo">Our Values</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
     <!-- Header -->
     <div class="intro-header">
-        <div class="container">
+        <div class="sponsorship-logos">
+            <a href="https://www.railwaychildren.org.uk" target="_blank" title="Railway children"><img height="55px" class="logo" src="/static/img/raillogo.png" alt="Railway children logo"/></a>
 
+            <a href="http://www.refugee-action.org.uk" target="_blank" title="Refugee action"><img height="55px" class="logo" src="/static/img/refugeelogo.png" alt="Refugee action logo"/></a>
+
+            <a target="_blank" title="The salvation army logo" href="https://www.salvationarmyappeals.org.uk"><img height="55px" class="logo" src="/static/img/salarmylogo.png" alt="The salvation army logo"/></a>
+
+            <a href="http://shelter.org.uk" target="_blank" title="Shelter logo"><img height="55px" class="logo" src="/static/img/shelter.png" alt="Shelter logo"/></a>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+
                     <div class="intro-message">
                         <h1>Donate train tickets</h1>
                         <h3>Share your mobility with those who need it. This is Rail Aid.</h3>
@@ -170,42 +150,47 @@
                                     <input type="text" id="total-amount" value="4" class="form-control"/>
                                 </div>
                                 <hr/>
-                                <label>How do you want to dispatch it ?</label>
+                                <label>How do you want to share it ?</label>
                                 <div class="row donation-row">
-                                    <div class="col-md-2 col-xs-3">
-                                        <label for="amount-homeless">Homeless</label>
+                                    <div class="col-md-3 col-xs-3">
+                                        <label for="amount-homeless">Shelter</label>
                                     </div>
-                                    <div class="col-md-10 col-xs-9">
+                                    <div class="col-md-9 col-xs-9">
                                         <input type="text" name="amount-homeless" class="donation-value" data-slider-id='slider-homeless' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
                                     </div>
                                 </div>
-
+                                <p class="organization-description">Help the homeless to seize opportunity</p>
                                 <div class="row donation-row">
-                                    <div class="col-md-2 col-xs-3">
-                                        <label for="amount-refugees">Refugees</label>
+                                    <div class="col-md-3 col-xs-3">
+                                        <label for="amount-refugees">Refugee Action</label>
                                     </div>
-                                    <div class="col-md-10 col-xs-9">
+                                    <div class="col-md-9 col-xs-9">
                                         <input type="text" name="amount-refugees" class="donation-value" data-slider-id='slider-refugees' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
                                     </div>
                                 </div>
+                                <p class="organization-description">Fund travel for refugees seeking safety</p>
 
                                 <div class="row donation-row">
-                                    <div class="col-md-2 col-xs-3">
-                                        <label for="amount-orphans">Orphans</label>
+                                    <div class="col-md-3 col-xs-3">
+                                        <label for="amount-orphans">Railway Children</label>
                                     </div>
-                                    <div class="col-md-10 col-xs-9">
+                                    <div class="col-md-9 col-xs-9">
                                         <input type="text" name="amount-orphans" class="donation-value" data-slider-id='slider-orphans' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
                                     </div>
                                 </div>
+                                <p class="organization-description">Give a child the chance to see the country</p>
 
                                 <div class="row donation-row">
-                                    <div class="col-md-2 col-xs-3">
-                                        <label for="amount-poverished">Poverished</label>
+                                    <div class="col-md-3 col-xs-3">
+                                        <label for="amount-poverished">The Salvation Army</label>
                                     </div>
-                                    <div class="col-md-10 col-xs-9">
+                                    <div class="col-md-9 col-xs-9">
                                         <input type="text" name="amount-poverished" class="donation-value" data-slider-id='slider-poverished' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
                                     </div>
                                 </div>
+                                <p class="organization-description">Support the impoverished to overcome hardship
+
+                                </p>
 
                                 <div class="pull-right">
                                     Total : £<span id="total-price"></span>

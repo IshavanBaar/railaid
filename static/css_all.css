@@ -511,3 +511,18 @@ p.copyright {
 #back-top .fa {
     margin-right: 5px;
 }
+
+.organization-description {
+    font-size: 11pt;
+    margin-top: -10px;
+    color: #c7c3c3;
+}
+
+.sponsorship-logos {
+    margin: auto;
+    margin-top: -35px;
+}
+
+.logo {
+    margin-left: 20px;
+}

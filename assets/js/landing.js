@@ -4,9 +4,18 @@ $(".ticket").on("click", function() {
     $(this).addClass("selected");
     $("#donate").slideDown("slow");
     $("#donate-submit-button").attr("value", "BUY YOUR TICKET AND DONATE");
+
+    var defaultAmount = 1;
+    var ticketPrice = parseFloat($(".ticket.selected .price-value").html());
+    if (ticketPrice != Math.ceil(ticketPrice)) {
+        defaultAmount = (Math.ceil(ticketPrice) - ticketPrice).toFixed(2);
+    }
+
+    $("#total-amount").val(defaultAmount);
     setTotal();
 });
 $("#donate-button").on("click", function() {
+    $("#total-amount").val("4");
     $("#donate").slideDown("slow");
     setTotal();
 });
