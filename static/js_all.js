@@ -55,6 +55,7 @@ $('.donation-value').each(function() {
   sliders[$(this).attr("name")].on("slide", function(e) {
     var quotient = 1;
     var numberOfZero = 0;
+    var name = $(this).attr("name");
 
     $(".donation-value").each(function(index, element) {
       if (isNaN(parseFloat($(this).val()))) {
@@ -66,14 +67,14 @@ $('.donation-value').each(function() {
         numberOfZero += 1;
       }
 
-      if (donation_values[index] != $(this).val()) {
+      if ($(this).attr("name") == name) {
         quotient = donation_values[index] - parseFloat($(this).val());
       }
     });
 
     $(".donation-value").each(function(index, element) {
       // 0 values are not changing
-      if (donation_values[index] == $(this).val() && $(this).val() != "0") {
+      if ($(this).attr("name") != name && $(this).val() != "0") {
         setDonationValue($(this), (parseFloat($(this).val()) + (quotient/(3 - numberOfZero))).toFixed(2));
       }
 
