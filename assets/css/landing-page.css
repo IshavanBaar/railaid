@@ -36,7 +36,7 @@ h6 {
     text-align: center;
     color: #F1E9D4;
 	background-color:rgba(255,0,0,0.5);
-    background: url(img/intro-bg.jpg) no-repeat center center;
+    background: url(../../static/img/intro-bg.jpg) no-repeat center center;
     background-size: cover;
 }
 
@@ -138,7 +138,7 @@ h6 {
 
 .banner {
     padding: 100px 0;
-    background: url(img/banner-bg.jpg) no-repeat center center;
+    background: url(../../static/img/banner-bg.jpg) no-repeat center center;
     background-size: cover;
 }
 
