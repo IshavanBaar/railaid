@@ -216,3 +216,7 @@ p.copyright {
 .hide {
     display: none;
 }
+
+.currency-input {
+    width: 100px;
+}

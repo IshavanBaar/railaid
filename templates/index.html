@@ -94,12 +94,15 @@
 
                     <div class="row">
                         <form method="POST" action="{{ url_for("paypal_process") }}" role="form">
-                            <div class="form-group">
-                                <label for="amount-homeless">How much do you want to give ?
-                                    <input type="text" id="total-amount" value="4" class="form-control"/>
-                                </label>
+                            <label for="amount-homeless">
+                                How much do you want to give ?
+                            </label>
+                            <div class="input-group currency-input">
+                                <span class="input-group-addon">£</span>
+                                <input type="text" id="total-amount" value="4" class="form-control"/>
                             </div>
-
+                            <hr/>
+                            <label>How do you want to dispatch it ?</label>
                             <div class="row donation-row">
                                 <div class="col-md-2 col-xs-3">
                                     <label for="amount-homeless">Homeless</label>
