@@ -246,3 +246,16 @@ $("#search-button").on("click", function() {
 $("#datepicker").datetimepicker({
     format: "YYYY-MM-DD"
 });
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() != 0) {
+    	$('#back-top').fadeIn();
+    } else {
+    	$('#back-top').fadeOut();
+    }
+});
+
+$('#back-top').click(function() {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});

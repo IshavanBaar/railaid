@@ -499,3 +499,15 @@ p.copyright {
     cursor: pointer;
     background-color: #f9f6b4;
 }
+
+#back-top {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	display: none;
+	cursor: pointer;
+}
+
+#back-top .fa {
+    margin-right: 5px;
+}
