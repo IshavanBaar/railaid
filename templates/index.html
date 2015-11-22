@@ -160,59 +160,61 @@
                     <h2 class="section-heading">Make your donation</h2>
 
                     <div class="row">
-                        <form method="POST" action="{{ url_for("paypal_process") }}" role="form">
-                            <label for="amount-homeless">
-                                How much do you want to give ?
-                            </label>
-                            <div class="input-group currency-input">
-                                <span class="input-group-addon">£</span>
-                                <input type="text" id="total-amount" value="4" class="form-control"/>
-                            </div>
-                            <hr/>
-                            <label>How do you want to dispatch it ?</label>
-                            <div class="row donation-row">
-                                <div class="col-md-2 col-xs-3">
-                                    <label for="amount-homeless">Homeless</label>
+                        <div class="col-xs-12">
+                            <form method="POST" action="{{ url_for("paypal_process") }}" role="form">
+                                <label for="amount-homeless">
+                                    How much do you want to give ?
+                                </label>
+                                <div class="input-group currency-input">
+                                    <span class="input-group-addon">£</span>
+                                    <input type="text" id="total-amount" value="4" class="form-control"/>
                                 </div>
-                                <div class="col-md-10 col-xs-9">
-                                    <input type="text" name="amount-homeless" class="donation-value" data-slider-id='slider-homeless' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
+                                <hr/>
+                                <label>How do you want to dispatch it ?</label>
+                                <div class="row donation-row">
+                                    <div class="col-md-2 col-xs-3">
+                                        <label for="amount-homeless">Homeless</label>
+                                    </div>
+                                    <div class="col-md-10 col-xs-9">
+                                        <input type="text" name="amount-homeless" class="donation-value" data-slider-id='slider-homeless' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row donation-row">
-                                <div class="col-md-2 col-xs-3">
-                                    <label for="amount-refugees">Refugees</label>
+                                <div class="row donation-row">
+                                    <div class="col-md-2 col-xs-3">
+                                        <label for="amount-refugees">Refugees</label>
+                                    </div>
+                                    <div class="col-md-10 col-xs-9">
+                                        <input type="text" name="amount-refugees" class="donation-value" data-slider-id='slider-refugees' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
+                                    </div>
                                 </div>
-                                <div class="col-md-10 col-xs-9">
-                                    <input type="text" name="amount-refugees" class="donation-value" data-slider-id='slider-refugees' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
-                                </div>
-                            </div>
 
-                            <div class="row donation-row">
-                                <div class="col-md-2 col-xs-3">
-                                    <label for="amount-orphans">Orphans</label>
+                                <div class="row donation-row">
+                                    <div class="col-md-2 col-xs-3">
+                                        <label for="amount-orphans">Orphans</label>
+                                    </div>
+                                    <div class="col-md-10 col-xs-9">
+                                        <input type="text" name="amount-orphans" class="donation-value" data-slider-id='slider-orphans' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
+                                    </div>
                                 </div>
-                                <div class="col-md-10 col-xs-9">
-                                    <input type="text" name="amount-orphans" class="donation-value" data-slider-id='slider-orphans' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
-                                </div>
-                            </div>
 
-                            <div class="row donation-row">
-                                <div class="col-md-2 col-xs-3">
-                                    <label for="amount-poverished">Poverished</label>
+                                <div class="row donation-row">
+                                    <div class="col-md-2 col-xs-3">
+                                        <label for="amount-poverished">Poverished</label>
+                                    </div>
+                                    <div class="col-md-10 col-xs-9">
+                                        <input type="text" name="amount-poverished" class="donation-value" data-slider-id='slider-poverished' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
+                                    </div>
                                 </div>
-                                <div class="col-md-10 col-xs-9">
-                                    <input type="text" name="amount-poverished" class="donation-value" data-slider-id='slider-poverished' type="text" data-slider-min="0" data-slider-max="4" data-slider-step="0.01" data-slider-value="1" value="1" data-slider-handle="triangle"/>
-                                </div>
-                            </div>
 
-                            <div class="pull-right">
-                                Total : £<span id="total-price"></span>
-                            </div>
-                            <br/>
-                            <br/>
-                            <input type="submit" value="Donate" id="donate-submit-button" class="pull-right btn btn-info network-name"/>
-                        </form>
+                                <div class="pull-right">
+                                    Total : £<span id="total-price"></span>
+                                </div>
+                                <br/>
+                                <br/>
+                                <input type="submit" value="Donate" id="donate-submit-button" class="pull-right btn btn-info network-name"/>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
