@@ -20,6 +20,7 @@ env.register (
     assets.Bundle(
         'js/jquery.js',
         'js/bootstrap.min.js',
+        'js/slider.js',
         'js/amounts.js',
         output='js_all.js'
     )
@@ -29,6 +30,8 @@ env.register(
     'css_all',
     assets.Bundle(
         'css/bootstrap.min.css',
+        'css/slider.css',
+        'css/font-awesome.min.css',
         'css/landing-page.css',
         output='css_all.css'
     )

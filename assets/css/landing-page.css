@@ -30,6 +30,14 @@ h6 {
     font-weight: 400;
 }
 
+.donation-value .slider-selection {
+    background-color: #4A6B8A;
+}
+
+.donation-row {
+    padding: 10px;
+}
+
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
