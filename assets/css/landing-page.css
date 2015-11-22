@@ -30,12 +30,17 @@ h6 {
     font-weight: 400;
 }
 
-.donation-value .slider-selection {
-    background-color: #4A6B8A;
+.slider-selection {
+    background: #82a4c4;
 }
 
 .donation-row {
-    padding: 10px;
+    padding: 10px 10px 10px 0px;;
+}
+
+.donate-button {
+    padding: 5px;
+    font-size: 25pt;
 }
 
 .intro-header {
