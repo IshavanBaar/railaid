@@ -32,7 +32,6 @@ env.register(
     assets.Bundle(
         'css/bootstrap.min.css',
         'css/slider.css',
-        'css/font-awesome.min.css',
         'css/landing-page.css',
         output='css_all.css'
     )
