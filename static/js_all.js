@@ -161,14 +161,20 @@ $('.donation-value').each(function() {
       }
     });
 
-    $(".donation-value").each(function(index, element) {
-      // 0 values are not changing
-      if ($(this).attr("name") != name && $(this).val() != "0") {
-        setDonationValue($(this), (parseFloat($(this).val()) + (quotient/(3 - numberOfZero))).toFixed(2));
-      }
+    if (numberOfZero === 4) {
+      $(".donation-value").each(function(index, element) {
+        setDonationValue($(this), (parseFloat($(this).val())/4).toFixed(2));
+      });
+    } else {
+      $(".donation-value").each(function(index, element) {
+        // 0 values are not changing
+        if ($(this).attr("name") != name && $(this).val() != "0") {
+          setDonationValue($(this), (parseFloat($(this).val()) + (quotient/(3 - numberOfZero))).toFixed(2));
+        }
 
-      donation_values[index] = $(this).val();
-    });
+        donation_values[index] = $(this).val();
+      });
+    }
   });
 
   setTotal();
